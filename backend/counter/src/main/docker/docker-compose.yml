@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  postgres-database-counter:
+    container_name: postgres_database_counter
+    image: postgres:15.4
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres

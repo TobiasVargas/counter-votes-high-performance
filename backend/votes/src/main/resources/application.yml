@@ -1,0 +1,11 @@
+quarkus:
+  http:
+    port: 8002
+  application:
+    name: votes-service-api
+kafka:
+  bootstrap:
+    servers:  localhost:29092
+  auto:
+    offset:
+      reset: earliest

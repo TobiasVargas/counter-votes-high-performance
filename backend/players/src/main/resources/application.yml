@@ -1,0 +1,15 @@
+quarkus:
+  application:
+    name: players-service-api
+  http:
+    port: 8001
+  datasource:
+    db-kind: postgresql
+    username: postgres
+    password: postgres
+    jdbc:
+      url: jdbc:postgresql://localhost:5432/players
+  flyway:
+    migrate-at-start: true
+    schemas:
+      - players

@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  postgres-database-players:
+    container_name: postgres_database_players
+    image: postgres:15.4
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres

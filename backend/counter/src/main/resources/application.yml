@@ -1,0 +1,29 @@
+quarkus:
+  application:
+    name: counter-service-api
+  http:
+    port: 8003
+  datasource:
+    db-kind: postgresql
+    username: postgres
+    password: postgres
+    jdbc:
+      url: jdbc:postgresql://localhost:5433/counter
+  flyway:
+    migrate-at-start: true
+    schemas: counter
+kafka:
+  bootstrap:
+    servers: localhost:29092
+  auto:
+    offset:
+      reset: earliest
+clients:
+  players/mp-rest/url: http://localhost:8001
+  players/mp-rest/scope: javax.inject.Singleton
+mp:
+  messaging:
+    incoming:
+      votes-computing:
+        connector: smallrye-kafka
+        commit-strategy: latest
